@@ -22,7 +22,7 @@ open class IPaCSVParser: NSObject {
     }
     
     //return value : (value,isChangeLine)
-    open func parse() throws -> [[String]] {
+    open func parse() -> [[String]] {
         var result = [[String]]()
         var currentRow = [String]()
         var valueString = ""
