@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'IPaCSVParser_Example' do
+  pod 'IPaCSVParser', :path => '../'
+
+  target 'IPaCSVParser_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
