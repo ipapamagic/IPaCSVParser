@@ -21,8 +21,7 @@ open class IPaCSVParser: NSObject {
         self.csvString = csvString
     }
     
-    //return value : (value,isChangeLine)
-    open func parse() -> [[String]] {
+    open func parse(_ progress:((Float)->())?) -> [[String]] {
         var result = [[String]]()
         var currentRow = [String]()
         var valueString = ""
@@ -62,6 +61,9 @@ open class IPaCSVParser: NSObject {
                     valueString += character
                     break
                 }
+            }
+            if let progress = progress {
+                progress(Float(index) / Float(csvString.characters.count))
             }
         }
         currentRow.append(valueString)
