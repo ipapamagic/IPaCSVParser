@@ -27,7 +27,7 @@ open class IPaCSVParser: NSObject {
         var valueString = ""
         var status = IPaCSVParserState.normal
         
-        for index in 0 ..< csvString.characters.count {
+        for index in 0 ..< csvString.count {
             let startIndex = csvString.index(csvString.startIndex, offsetBy: index)
             let endIndex = csvString.index(startIndex, offsetBy: 1)
             let character = self.csvString[startIndex ..< endIndex]
@@ -63,7 +63,7 @@ open class IPaCSVParser: NSObject {
                 }
             }
             if let progress = progress {
-                progress(Float(index) / Float(csvString.characters.count))
+                progress(Float(index) / Float(csvString.count))
             }
         }
         currentRow.append(valueString)
