@@ -5,9 +5,7 @@
 //  Created by IPa Chen on 2017/6/22.
 //
 //
-
-
-
+import Foundation
 open class IPaCSVParser: NSObject {
     public static func read(url:URL ,progress:((Float)->())? = nil) -> [[String]] {
         do {
